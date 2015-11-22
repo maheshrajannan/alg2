@@ -58,7 +58,15 @@ public class BTreePrinterTest {
 	 */
 	@Test
 	public final void testConvert() {
-		//fail("Not yet implemented"); // TODO
+		int[] a = new int[] { 5, 3, 1, 7 };
+		Node<Integer> root = BTreePrinter.convert(a);
+		BTreePrinter.convertAndPrint(a);
+		Node<Integer> nullNode = null;
+		assertTrue("Root is different" + root, root.equalsNode(5));
+		assertTrue("Root's left is different", root.equalsLeft(nullNode));
+		assertTrue("Root's right is different", root.equalsRight(3));
+		assertTrue("Root's right's right is different", root.getRight().equalsLeft(1));
+		assertTrue("Root's rightt's left is different", root.getRight().equalsRight(7));
 	}
 
 	/**

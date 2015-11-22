@@ -13,6 +13,8 @@ import java.util.List;
  *         Ref:
  *         https://github.com/justutkarsh/java-interview-codes/blob/master/ctci-
  *         java/src/treesngraphs/BTreePrinterTest.java
+ * 
+ *         This class prints a tree.
  */
 public class BTreePrinter {
 
@@ -64,7 +66,7 @@ public class BTreePrinter {
 				newNodes.add(null);
 				System.out.print("*");
 			}
-			//INFO: printing each node, print spaces between nodes.
+			// INFO: printing each node, print spaces between nodes.
 			BTreePrinter.printWhitespaces(betweenSpaces);
 		}
 		// INFO: after printing one line of nodes print an empty line.
@@ -137,24 +139,30 @@ public class BTreePrinter {
 	}
 
 	public static Node<Integer> convert(int[] a) {
-		int n = a.length - 1;
 		Node<Integer> root = null;
+		int n = -1;
 		Node<Integer> current = null;
-		for (int i = 0; i <= n / 2; i++) {
-			current = new Node<Integer>(a[i]);
-			if (i != 0) {
-				current.left = new Node<Integer>(a[2 * i]);
+		if (a != null && a.length > 0) {
+			n = a.length - 1;
+			for (int i = 0; i <= n / 2; i++) {
+				current = new Node<Integer>(a[i]);
+				if (i != 0) {
+					current.left = new Node<Integer>(a[2 * i]);
+				}
+				current.right = new Node<Integer>(a[(2 * i) + 1]);
+				if (root == null) {
+					root = current;
+				} else if (root != null && root.left != null && root.left.data.equals(current.data)) {
+					root.left = current;
+				} else if (root != null && root.right != null && root.right.data.equals(current.data)) {
+					root.right = current;
+				}
+
 			}
-			current.right = new Node<Integer>(a[(2 * i) + 1]);
-			if (root == null) {
-				root = current;
-			} else if (root != null && root.left != null && root.left.data.equals(current.data)) {
-				root.left = current;
-			} else if (root != null && root.right != null && root.right.data.equals(current.data)) {
-				root.right = current;
-			}
-	
+		} else {
+			System.err.println("incorrect input " + a);
 		}
+
 		return root;
 	}
 
