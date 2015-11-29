@@ -70,6 +70,7 @@ class Node<T extends Comparable<?>> {
 		}
 		return result;
 	}
+
 	/**
 	 * @param obj
 	 * @return
@@ -81,6 +82,10 @@ class Node<T extends Comparable<?>> {
 	/*
 	 * (non-Javadoc)
 	 * 
+	 * compares if current node, immediate left and immediate right nodes are 
+	 * equal.
+	 * 
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -89,6 +94,8 @@ class Node<T extends Comparable<?>> {
 	}
 
 	/**
+	 * compares 2 nodes to see if they are equal.
+	 * 
 	 * @param t
 	 * @return
 	 */
@@ -117,25 +124,31 @@ class Node<T extends Comparable<?>> {
 	}
 
 	/**
+	 * If the immediate left node is null or equals left node
+	 * of passed node then returns true.
+	 * 
+	 * This method is intended to overload leftEqualsLeft(Object that),
+	 * but since Node<T> is also up casted to object 
+	 * 
 	 * @param that
 	 * @return
 	 */
 	public boolean leftEqualsLeftNode(Node<T> that) {
 		boolean result = verify(that);
 
-		//Must break the pattern of return at last, here.
+		// Must break the pattern of return at last, here.
 		// INFO: just check for no left case.
-		if(result && this.getLeft() == null && that.getLeft() == null) {
+		if (result && this.getLeft() == null && that.getLeft() == null) {
 			return true;
 		}
-		
-		if(result){
+
+		if (result) {
 			result = verify(this.getLeft());
 		}
-		if(result){
+		if (result) {
 			result = verify(that.getLeft());
 		}
-		if(result){
+		if (result) {
 			result = this.getLeft().equalsNode(that.getLeft());
 		}
 		return result;
@@ -149,7 +162,7 @@ class Node<T extends Comparable<?>> {
 	public boolean leftEqualsLeft(Object obj) {
 		boolean result = verify(obj);
 		Node<T> that = null;
-		if(result) {
+		if (result) {
 			that = (Node<T>) obj;
 		}
 		if (result) {
@@ -171,12 +184,12 @@ class Node<T extends Comparable<?>> {
 	 * @return
 	 */
 	public boolean equalsRight(Node<T> that) {
-		//INFO: must break the pattern here to account for null right nodes.
-		if(that == null && this.getRight() == null) {
+		// INFO: must break the pattern here to account for null right nodes.
+		if (that == null && this.getRight() == null) {
 			return true;
 		}
 		boolean result = verify(that);
-		if(result) {
+		if (result) {
 			result = verify(this.getRight());
 		}
 		if (result) {
@@ -184,6 +197,7 @@ class Node<T extends Comparable<?>> {
 		}
 		return result;
 	}
+
 	/**
 	 * @param that
 	 * @return
@@ -192,7 +206,7 @@ class Node<T extends Comparable<?>> {
 	public boolean equalsLeft(Object thatObject) {
 		boolean result = verify(thatObject);
 		Node<T> that = null;
-		if(result) {
+		if (result) {
 			that = (Node<T>) thatObject;
 			result = equalsLeft(that);
 		}
@@ -212,12 +226,12 @@ class Node<T extends Comparable<?>> {
 	 * @return
 	 */
 	public boolean equalsLeft(Node<T> that) {
-		//INFO: must break the pattern here to account for null right nodes.
-		if(that == null && this.getLeft() == null) {
+		// INFO: must break the pattern here to account for null right nodes.
+		if (that == null && this.getLeft() == null) {
 			return true;
 		}
 		boolean result = verify(that);
-		if(result) {
+		if (result) {
 			result = verify(this.getLeft());
 		}
 		if (result) {
@@ -241,19 +255,19 @@ class Node<T extends Comparable<?>> {
 	public boolean rightEqualsRightNode(Node<T> that) {
 		boolean result = verify(that);
 
-		//Must break the pattern of return at last, here.
+		// Must break the pattern of return at last, here.
 		// INFO: just check for no right case.
-		if(result && this.getRight() == null && that.getRight() == null) {
+		if (result && this.getRight() == null && that.getRight() == null) {
 			return true;
 		}
-		
-		if(result){
+
+		if (result) {
 			result = verify(this.getRight());
 		}
-		if(result){
+		if (result) {
 			result = verify(that.getRight());
 		}
-		if(result){
+		if (result) {
 			result = this.getRight().equalsNode(that.getRight());
 		}
 		return result;
