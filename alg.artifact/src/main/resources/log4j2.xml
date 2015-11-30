@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="Console">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %M %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="TRACE">
+			<AppenderRef ref="Console" />
+		</Root>
+		<!-- <logger name="alg" level="TRACE"> <AppenderRef ref="Console"/> </logger> 
+			<logger name="alg.group" level="TRACE"> <AppenderRef ref="Console"/> </logger> 
+			<logger name="net" level="ERROR"> <AppenderRef ref="Console"/> </logger> 
+			<logger name="net.journaldev" level="ERROR"> <AppenderRef ref="Console"/> 
+			</logger> -->
+	</Loggers>
+</Configuration>
