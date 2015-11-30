@@ -11,3 +11,16 @@
 20:34:47.041 [main] testNotRightEqualsRight DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes do NOT have same right
 20:34:47.042 [main] testNotEqualsObject DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes with different left and right are not equal
 20:34:47.042 [main] tearDownAfterClass DEBUG alg.group.alg.artifact.NodeTest - DONE Testing node as a POJO
+20:51:07.566 [main] setUpBeforeClass DEBUG alg.group.alg.artifact.NodeTest - Testing node as a POJO
+20:51:07.567 [main] testRightEqualsRight DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes have same right
+20:51:07.568 [main] testRightEqualsRightNull DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes have same right, with right being null
+20:51:07.568 [main] testNotLeftEqualsLeft DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes do NOT have same left
+20:51:07.569 [main] testEqualsObject DEBUG alg.group.alg.artifact.NodeTest - testing if 2 nodes are equal
+20:51:07.569 [main] testEqualsObjectNoLeft DEBUG alg.group.alg.artifact.NodeTest - testing if 2 nodes, with no left are equal
+20:51:07.569 [main] testEqualsObjectNoRight DEBUG alg.group.alg.artifact.NodeTest - testing if 2 nodes with no right are equal
+20:51:07.570 [main] testLeftEqualsLeftNull DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes have same left, with left being null
+20:51:07.570 [main] testLeftEqualsLeft DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes have same left
+20:51:07.571 [main] testEqualsObjectNoLeftAndRight DEBUG alg.group.alg.artifact.NodeTest - testing if 2 nodes with no left and no right are equal
+20:51:07.571 [main] testNotRightEqualsRight DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes do NOT have same right
+20:51:07.572 [main] testNotEqualsObject DEBUG alg.group.alg.artifact.NodeTest - ensuring 2 nodes with different left and right are not equal
+20:51:07.572 [main] tearDownAfterClass DEBUG alg.group.alg.artifact.NodeTest - DONE Testing node as a POJO
